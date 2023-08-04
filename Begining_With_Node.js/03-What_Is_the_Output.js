@@ -7,3 +7,11 @@ Node uses _________ engine in core.
 3. Chrome V8                            // Correct
 4. Node En
 */
+
+/*
+Node I/O Operations
+Node.js is capable of asynchronous I/O requests.
+
+1. True                                     // Correct
+2. False
+*/
