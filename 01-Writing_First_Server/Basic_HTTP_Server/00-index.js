@@ -14,7 +14,7 @@ file and files Return Some Logic Which is Written in that Server
 
 const http = require('node:http');           // For Accessing http Module First Import That Module into this file
 
-const fs = require('fs');                   // InBuilt Module Which Helps to Read HTML Files and res
+const fs = require('fs');                   // InBuil0t Module Which Helps to Read HTML Files and res
 
 // Function takes Two Arguments one is Required and One is Response
 function responseServer(required, response) {
@@ -30,7 +30,7 @@ function responseServer(required, response) {
 
     /* For Reading HTML File You Need Something Which Read that HTML File and Send that HTML File When Browser Request */
     //In Node.Js You can't Write Directly File Name Always Write in Directory Form
-    fs.readFile('./01-Writing_First_Server/Basic_HTTP_Server/index.html', function(error, data) {      // This is Asynchronous Function
+    fs.readFile('./index.html', function(error, data) {      // This is Asynchronous Function
         if(error){
             console.log('Error', error);
             return response.end('<h1> Error !</h1>');
