@@ -30,7 +30,7 @@ function responseServer(required, response) {
 
     /* For Reading HTML File You Need Something Which Read that HTML File and Send that HTML File When Browser Request */
     //In Node.Js You can't Write Directly File Name Always Write in Directory Form
-    fs.readFile('./index.html', function(error, data) {      // This is Asynchronous Function
+    fs.readFile('./01-Writing_First_Server/Basic_HTTP_Server/index.html', function(error, data) {      // This is Asynchronous Function
         if(error){
             console.log('Error', error);
             return response.end('<h1> Error !</h1>');
