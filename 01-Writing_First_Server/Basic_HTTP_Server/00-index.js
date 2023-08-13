@@ -83,3 +83,9 @@ server.listen(port, function (error) {
 
 // If We Run Our Server Right Now then it's Load Continuesly Because we Did'nt return anything
 // after server is Run Successfully
+
+
+
+// With Nodemon You Don't Need to Restart Server Again and Again Nodemon Do this For You 
+// Automatically EveryTime You Change Somthing in JavaScript Code
+// if You Change Something in HTML File then it Didn't Restart the Server
