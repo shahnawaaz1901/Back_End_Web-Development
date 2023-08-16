@@ -1,5 +1,9 @@
 // For Using Express Functionalities You Need to import it Using Require Function
 const express = require('express');
+// For Using ejs Template Engine Functionalities You Need to import it Using Require Function
+const ejs = require('ejs');
+// We Dont Need to insall Path it will comes with node.js
+const path = require('path');
 
 // Port is Always Required 8000 is Default Port
 const port = 8000;
@@ -7,7 +11,17 @@ const port = 8000;
 // Calling Express Function it Will Creates Server For Us
 // all functionalities of Express now store in our app Variable
 const app = express();
+// this statement set our view engine to ejs
+app.set('view engine','ejs');
 
+// this statement set inbuilt view path of express to our view path where we stores Files to render it on Browser
+/* 
+__dirname is inbuilt variable which is type of string and it's dynamic it will contains 
+directory or address of Folder where we stores files to Render in the Browser
+*/
+
+// path.join function joins current path to a specific folder
+app.set('views',path.join(__dirname,'views'))
 /* 
 Instead of Check URL in switch cases and after that find corresponding function for that 
 switch case You Can Directly Write get and pass it two argument first is request URL
@@ -32,7 +46,9 @@ You Can Not Place Request Synchronously
 // app.patch('/',Callback Function)            // For patch Request
 // app.delete('/',Callback Function)           // For Delete Request
 app.get('/',(request, response)=>{             // For Get
-    console.log('Request URL', request);
+    // render function helps to read index file and send data to browser and browser render data
+    return response.render('index');
+    // console.log('Request URL', request);
     /* 
     When You Observe reuqest which is sent by browser, then You Realize that browser sends 
     Every Possible Information Regarding to the User execpt personal and private information
@@ -92,7 +108,6 @@ app.get('/',(request, response)=>{             // For Get
     For Returning an HTML Element You Can Directly Return withOut telling HTML content
     to the browser express will do this for you by detecting automatically
     */
-   response.send('<h1>Hello Baby</h1>');
    /*
    this Statement using express.Js Tells Automatically to Browser hey this is an HTML 
    element and browser will Render it according to that
