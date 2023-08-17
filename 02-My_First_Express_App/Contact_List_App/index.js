@@ -1,13 +1,18 @@
+/* Import Modules */
 // For Using Express Functionalities You Need to import it Using Require Function
 const express = require('express');
+
 // For Using ejs Template Engine Functionalities You Need to import it Using Require Function
 const ejs = require('ejs');
+
 // We Dont Need to insall Path it will comes with node.js
 const path = require('path');
 
+/* Port */
 // Port is Always Required 8000 is Default Port
 const port = 8000;
 
+/* Setting Up Functionalities */
 // Calling Express Function it Will Creates Server For Us
 // all functionalities of Express now store in our app Variable
 const app = express();
@@ -48,8 +53,9 @@ You Can Not Place Request Synchronously
 app.get('/',(request, response)=>{             // For Get
     // render function helps to read index file and send data to browser and browser render data
     return response.render('index');
-    // console.log('Request URL', request);
+    
     /* 
+    // console.log('Request URL', request);
     When You Observe reuqest which is sent by browser, then You Realize that browser sends 
     Every Possible Information Regarding to the User execpt personal and private information
     One is defaultEncoding : 'utf8'
