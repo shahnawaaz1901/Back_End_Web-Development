@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <!-- If We Don't Want to Show Something on Browser then You skip equal sign -->
+    <!-- EJS Support All Functionalities of JavaScript in HTML -->
+    <ul>
+        <%for(let i=0; i <=10;i++){%>               <!--We Not Write equal Sign after first percentage Because we wouldn't Want to Display Loop We Want to Print Only Number -->
+            <li>
+                <%= i %>        <!--Equal Sign is Present Because we Want to Print or Render Number on Browser-->
+            </li>
+        <%}%>
+    </ul>
+    <%if(!true){%>
+        <p>Hey This is True</p>
+    <%} else {%>
+        <p>This is False</p>
+        <%}%>
+</body>
+
+</html>

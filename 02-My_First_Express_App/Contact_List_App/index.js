@@ -140,6 +140,12 @@ app.get('/github',(request, response)=>{
     return response.render('github.ejs',{title:'Github Portfolio'});
 })
 
+app.get('/loop',(request, response)=>{
+    return response.render('loops_and_Condition.ejs', {
+        title : "Loop In HTML"
+    })
+})
+
 // listen function takes two Argument one is Port and Another is Callback
 // listen callback takes error as first Argument
 app.listen(port, (error)=>{
