@@ -52,8 +52,16 @@ You Can Not Place Request Synchronously
 // app.delete('/',Callback Function)           // For Delete Request
 app.get('/',(request, response)=>{             // For Get
     // render function helps to read index file and send data to browser and browser render data
-    return response.render('index');
+    // title is works as variable in our ejs file whenever we use title it represents value of title which is declare here
+    return response.render('index.ejs',{title : 'My First Contact List App'});            
+    // if We skip extension it will Run Perfectly
     
+    /* 
+    If We Change Something in JS Code then Our Server Need to Restart Because whole Js Code is Compiled again 
+    but if we change something in ejs or html file it does not require to restart the server because file only 
+    reads when browser sends request for that file
+    */
+
     /* 
     // console.log('Request URL', request);
     When You Observe reuqest which is sent by browser, then You Realize that browser sends 
@@ -120,8 +128,17 @@ app.get('/',(request, response)=>{             // For Get
    */
 });
 
+app.get('/home',(request, response)=>{
+    return response.render('home.ejs',{title:'Home || Shahnawaaz Ansari'});
+})
 
+app.get('/contact',(request, response)=>{
+    return response.render('contact.ejs', {title : 'Contact Us !'})
+})
 
+app.get('/github',(request, response)=>{
+    return response.render('github.ejs',{title:'Github Portfolio'});
+})
 
 // listen function takes two Argument one is Port and Another is Callback
 // listen callback takes error as first Argument
