@@ -9,7 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Given Statement update title with title value which is define in js code -->
     <!-- For Using Value of title you need to close value between angular bracket along with % and equal sign before name of the variable -->
-    <title><%= title %></title>
+    <!-- 
+        <title><%= title %></title>                 //Instead of Using this Directly
+     -->
+     <title><%= locals.title%></title>              <!--Because Locals is Global Object and What Ever Variables We Return as Render is Key Pair Values of locals-->
 </head>
 <body>
     <h1>Hello Babe ! My Name is Shahnawaaz Ansari</h1>
