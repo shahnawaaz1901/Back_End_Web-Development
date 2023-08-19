@@ -7,6 +7,24 @@ app.set('view engine', 'ejs');                  // Set view engine to ejs
 // First Argument is views means this views then second time in path there is folder views so both are diiferent
 app.set('views', path.join(__dirname, 'views')) // Set View Engine Path
 app.use(express.urlencoded());
+
+/* Own Created MiddleWare */
+app.use(function(request, response, next){                      // MiddleWare 1
+    /* 
+    Middle Ware takes Three Argument first is Request which is directly send by the browser
+    next is Response if You Respond to the Browser and Final is next, next is a function which
+    work is if next middleware if exist then it goes for next middleware otherwise it goes for
+    directly to the controller.
+    */
+   console.log("Inside MiddleWare 1");
+   next();                      // If You Not Call next function then browser is stuck and keep loading and request never reach to the controller
+})
+
+app.use(function(request, response, next){
+    console.log("Indie MiddleWare 2");
+    next();
+})
+
 var contactList = [
     {
         name : "Shahnawaaz Ansari",
@@ -22,7 +40,11 @@ var contactList = [
     }
 ]
 
-
+/* 
+Controller :- For Every request.url Creation of callback function and return or whatever 
+            statement written in callback, the whole process of identifying request.url
+            and Corresponding to that url call the callback function is called Controller.
+*/
 app.get('/',function(request, response){        // First Argument of get is Required url
     return response.render('contact',{contact : contactList});
 })
