@@ -17,11 +17,14 @@ app.use(function(request, response, next){                      // MiddleWare 1
     directly to the controller.
     */
    console.log("Inside MiddleWare 1");
+   request.myName = "Shahnawaaz Ansari";                // Possible to Create New Property of Request Object
    next();                      // If You Not Call next function then browser is stuck and keep loading and request never reach to the controller
 })
 
 app.use(function(request, response, next){
     console.log("Indie MiddleWare 2");
+    console.log(request.myName);
+    request.myName = "Ashu Ansari"              // You Can Also Update Property in MiddleWare
     next();
 })
 
@@ -46,6 +49,7 @@ Controller :- For Every request.url Creation of callback function and return or 
             and Corresponding to that url call the callback function is called Controller.
 */
 app.get('/',function(request, response){        // First Argument of get is Required url
+    console.log(request.myName);
     return response.render('contact',{contact : contactList});
 })
 
