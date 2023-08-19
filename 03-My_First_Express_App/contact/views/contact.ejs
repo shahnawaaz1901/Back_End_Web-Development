@@ -1,31 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            background-color: brown;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Contact List App</title>
 </head>
 
 <body>
-    <center>
-        <h1>
-            Contact List
-        </h1>
-    </center>
+    <h1>
+        Contact List
+    </h1>
     <ul>
         <%for(let eachContact of contact){%>
             <li>
-                <h2><%= eachContact.name %></h2>
-                <h3><%= eachContact.phone %></h3>
+                <h2>
+                    <%= eachContact.name %>
+                </h2>
+                <h3>
+                    <%= eachContact.phone %>
+                </h3>
             </li>
-        <%}%>
+            <%}%>
     </ul>
     <!-- action is Same as URL which Handle Post Request -->
     <form action="/create-contact" method="POST">
@@ -36,6 +32,7 @@
         <input type="text" name="phone" placeholder="Enter Phone" required>
         <button type="submit"> Add Contact </button>
     </form>
+    <script type="text/JavaScript" src="/js/script.js"></script>
 </body>
 
 </html>

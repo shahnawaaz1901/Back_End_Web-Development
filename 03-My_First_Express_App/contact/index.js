@@ -8,6 +8,9 @@ app.set('view engine', 'ejs');                  // Set view engine to ejs
 app.set('views', path.join(__dirname, 'views')) // Set View Engine Path
 app.use(express.urlencoded());
 
+// This MiddleWare is Required for Load CSS and JavaScript
+app.use(express.static('asset'));
+
 /* Own Created MiddleWare */
 app.use(function(request, response, next){                      // MiddleWare 1
     /* 
