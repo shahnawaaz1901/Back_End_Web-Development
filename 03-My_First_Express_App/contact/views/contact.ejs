@@ -27,6 +27,15 @@
             </li>
         <%}%>
     </ul>
+    <!-- action is Same as URL which Handle Post Request -->
+    <form action="/create-contact" method="POST">
+        <!-- Define Name is Most Important Because  -->
+        <!-- What Ever value of 'name' you give is the key for receiving object 
+            and whatever data user is filled is value of that key -->
+        <input type="text" name="name" placeholder="Enter Name" required>
+        <input type="text" name="phone" placeholder="Enter Phone" required>
+        <button type="submit"> Add Contact </button>
+    </form>
 </body>
 
 </html>
