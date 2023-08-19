@@ -6,7 +6,7 @@ const app = express();                          // Use App With express Function
 app.set('view engine', 'ejs');                  // Set view engine to ejs
 // First Argument is views means this views then second time in path there is folder views so both are diiferent
 app.set('views', path.join(__dirname, 'views')) // Set View Engine Path
-
+app.use(express.urlencoded());
 var contactList = [
     {
         name : "Shahnawaaz Ansari",
@@ -34,9 +34,17 @@ app.get('/practice',function(request, response){
 // Post Request, Because we Create Contact and Try to Save it
 // Always when You Create a Handle Function for Post request.url is same in action(in HTML form tag) as mention in function
 app.post('/create-contact',function(request, response){
-    console.log(request);
+    // After Install and Use body Parser as middleware whatEver Data You Enter in Form Present in body property of request in Object form
+    const contact = {
+        name : request.body.name,
+        phone : request.body.phone
+    }
+    contactList.push(contact);
+    /* What Ever Data You Send Through Post Request is Available to us in request argument but Problem is It's in Encoded Form so that We Need to Decode it First to UnderStand and Store it on Server, For Decoding We Need to install body parser */
     // a function get is required for handle this practice URL to render it On Browser at line 30
-    // response.redirect('/practice');
+    // Both Are Same You Can use Slash or Use Back to redirect to the same Page
+    response.redirect('/');
+    // response.redirect('back');
     // return;
 })
 
