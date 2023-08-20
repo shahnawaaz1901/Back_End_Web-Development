@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Contact List App</title>
+    <title>My Contact List App</title>
 </head>
 
 <body>
-    <h1>
-        Contact List
+    <h1 class="text-center">
+        <i class="fa-solid fa-address-book"></i>
+        <span>Contact List</span>
     </h1>
     <ul>
         <%for(let eachContact of contact){%>
             <li>
-                <h2>
+                <div class="name">
                     <%= eachContact.name %>
-                </h2>
-                <h3>
+                </div>
+                <div class="phone">
+                    <span>+91-</span>
                     <%= eachContact.phone %>
-                </h3>
+                </div>
             </li>
             <%}%>
     </ul>
@@ -32,6 +34,7 @@
         <input type="text" name="phone" placeholder="Enter Phone" required>
         <button type="submit"> Add Contact </button>
     </form>
+    <script src="https://kit.fontawesome.com/a4636622a9.js" crossorigin="anonymous"></script>
     <script type="text/JavaScript" src="/js/script.js"></script>
 </body>
 
