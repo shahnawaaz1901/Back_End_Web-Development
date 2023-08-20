@@ -32,18 +32,18 @@ app.use(function(request, response, next){
 })
 
 var contactList = [
-    {
-        name : "Shahnawaaz Ansari",
-        phone : '+91-9119145616'
-    },
-    {
-        name : "Zakir Hussain Ansari",
-        phone : '+91-9929711739'
-    },
-    {
-        name : "Toshiba Ansari",
-        phone : '+91-7339900265'
-    }
+    // {
+    //     name : "Shahnawaaz Ansari",
+    //     phone : '+91-9119145616'
+    // },
+    // {
+    //     name : "Zakir Hussain Ansari",
+    //     phone : '+91-9929711739'
+    // },
+    // {
+    //     name : "Toshiba Ansari",
+    //     phone : '+91-7339900265'
+    // }
 ]
 
 /* 

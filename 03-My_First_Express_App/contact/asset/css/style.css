@@ -14,34 +14,122 @@ h1{
 
 ul{
     list-style-type: none;
-    margin: auto;
+    margin: auto ;
 }
 li{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 650px;
-    /* border: 1px solid black; */
+    width: 50%;
     margin: 3px auto;
     padding: 8px 12px;
     line-height: 1;
     background-color: rgb(100,143,255);
     color: white;
 }
+
+li > div{
+    margin: 10px 0px;
+}
 form{
     text-align: center;
 }
 
 form > input{
+    width: 20%;
     padding: 2px 5px;
     font-size: 20px;
-    margin: 25px 10px;
+    margin: 25px 5px;
     border: none;
     border-bottom: 1px solid grey;
+}
+input:focus{
+    outline: none;
 }
 button{
     background-color: gray;
     color: white;
     padding: 5px 10px;
+    margin-left: 30px;
     border: none;
+}
+.name{
+    min-width: 250px;
+}
+
+@media screen and (max-width:1000px){
+    li{
+        width: 60%;
+    }
+    form > input{
+        width: 30%;
+    }
+}
+
+@media screen and (max-width:800px){
+    li{
+        width: 80%;
+    }
+    form > input{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:700px){
+    ul{
+        margin: 0px;
+    }
+}
+
+@media screen and (max-width:600px){
+    li{
+        display: block;
+        width: 80%;
+        text-align: center;
+    }
+    li > div{
+        margin: 15px 0px;
+    }
+    form > input{
+        width: 60%;
+    }
+    form{
+        text-align: center;
+    }
+    button{
+        display: block;
+        width: 30%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width:500px){
+    li{
+        width: auto;
+    }
+    li > div{
+        margin: 20px 0px;
+    }
+    form > input{
+        width: 70%;
+    }
+    button{
+        width: 40%;
+    }
+}
+@media screen and (max-width:350px){
+    .name{
+        min-width: auto;
+    }
+    form > input{
+        width: 90%;
+    }
+    button{
+        width: 60%;
+    }
+}
+
+
+span{
+    margin: 0px;
 }
