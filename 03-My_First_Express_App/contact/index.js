@@ -12,24 +12,24 @@ app.use(express.urlencoded());
 app.use(express.static('asset'));
 
 /* Own Created MiddleWare */
-app.use(function(request, response, next){                      // MiddleWare 1
-    /* 
-    Middle Ware takes Three Argument first is Request which is directly send by the browser
-    next is Response if You Respond to the Browser and Final is next, next is a function which
-    work is if next middleware if exist then it goes for next middleware otherwise it goes for
-    directly to the controller.
-    */
-   console.log("Inside MiddleWare 1");
-   request.myName = "Shahnawaaz Ansari";                // Possible to Create New Property of Request Object
-   next();                      // If You Not Call next function then browser is stuck and keep loading and request never reach to the controller
-})
+// app.use(function(request, response, next){                      // MiddleWare 1
+//     /* 
+//     Middle Ware takes Three Argument first is Request which is directly send by the browser
+//     next is Response if You Respond to the Browser and Final is next, next is a function which
+//     work is if next middleware if exist then it goes for next middleware otherwise it goes for
+//     directly to the controller.
+//     */
+//    console.log("Inside MiddleWare 1");
+//    request.myName = "Shahnawaaz Ansari";                // Possible to Create New Property of Request Object
+//    next();                      // If You Not Call next function then browser is stuck and keep loading and request never reach to the controller
+// })
 
-app.use(function(request, response, next){
-    console.log("Indie MiddleWare 2");
-    console.log(request.myName);
-    request.myName = "Ashu Ansari"              // You Can Also Update Property in MiddleWare
-    next();
-})
+// app.use(function(request, response, next){
+//     console.log("Indie MiddleWare 2");
+//     console.log(request.myName);
+//     request.myName = "Ashu Ansari"              // You Can Also Update Property in MiddleWare
+//     next();
+// })
 
 var contactList = [
     // {
@@ -52,14 +52,16 @@ Controller :- For Every request.url Creation of callback function and return or 
             and Corresponding to that url call the callback function is called Controller.
 */
 app.get('/',function(request, response){        // First Argument of get is Required url
-    console.log(request.myName);
-    return response.render('contact',{contact : contactList});
+    return response.render('contact',{
+        title : "My Contact List",
+        contact : contactList
+    });
 })
-
+/*
 app.get('/practice',function(request, response){
     return response.render('practice');
 })
-
+*/
 // Post Request, Because we Create Contact and Try to Save it
 // Always when You Create a Handle Function for Post request.url is same in action(in HTML form tag) as mention in function
 app.post('/create-contact',function(request, response){
@@ -74,9 +76,22 @@ app.post('/create-contact',function(request, response){
     // Both Are Same You Can use Slash or Use Back to redirect to the same Page
     response.redirect('/');
     // response.redirect('back');
-    // return;
 })
-
+/* Query Method Not required Phone after request url  */
+app.get('/delete-contact',(request, response)=>{
+    let phone = request.query.phone;
+    let index = contactList.findIndex((contact)=>contact.phone == phone);
+    if(index != -1){
+        contactList.splice(index, 1);
+        response.redirect('back');
+    }
+})
+/* Use For Params
+app.get('/delete-contact/:phone',function(request,response){
+    MiddleWare is Not Responsible for params or query it is Only Responsible for Input Form Data
+    // console.log(request.query);
+    console.log(request.params);
+})*/
 // WhatEver method we use get or post or any other kind express detect that method and value of that method is true if You Print the Request
 
 app.listen(port,(error)=>{

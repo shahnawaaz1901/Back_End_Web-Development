@@ -1,41 +1,60 @@
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title><%= locals.title %></title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>My Contact List App</title>
-</head>
-
-<body>
+  <body>
     <h1 class="text-center">
-        <i class="fa-solid fa-address-book"></i>
-        <span>Contact List</span>
+      <i class="fa-solid fa-address-book"></i>
+      <span>Contact List</span>
     </h1>
     <ul>
-        <%for(let eachContact of contact){%>
-            <li>
-                <div class="name">
-                    <%= eachContact.name %>
-                </div>
-                <div class="phone">
-                    <span>+91 -</span>
-                    <%= eachContact.phone %>
-                </div>
-            </li>
-            <%}%>
+      <%for(let eachContact of contact){%>
+      <li>
+        <div class="contact">
+            <div class="name"><%= eachContact.name %></div>
+            <div class="phone">
+              <span>+91 -</span>
+              <%= eachContact.phone %>
+            </div>
+        </div>
+        <div class="delete-btn"> 
+          <a
+            href="/delete-contact/?phone=<%= eachContact.phone %>"
+          >
+            <i class="fa-solid fa-trash"></i>
+          </a>
+        </div>
+        <!-- This is Params Method Nesting is Not Possible
+        <a href="/delete-contact/<%=eachContact.phone%>">
+          <i class="fa-solid fa-trash"></i>
+        </a>
+        -->
+        <!-- This is Query Method Which is Benefit to use Because nesting is possible in query -->
+        <!-- <a
+          href="/delete-contact/phone=<%=eachContact.phone%>&name=<%=eachContact.name%>"
+        >
+          <i class="fa-solid fa-trash"></i>
+        </a> -->
+      </li>
+      <%}%>
     </ul>
     <!-- action is Same as URL which Handle Post Request -->
     <form action="/create-contact" method="POST">
-        <!-- Define Name is Most Important Because  -->
-        <!-- What Ever value of 'name' you give is the key for receiving object 
+      <!-- Define Name is Most Important Because  -->
+      <!-- What Ever value of 'name' you give is the key for receiving object 
             and whatever data user is filled is value of that key -->
-        <input type="text" name="name" placeholder="Enter Name" required>
-        <input type="text" name="phone" placeholder="Enter Phone" required>
-        <button type="submit"> Add Contact </button>
+      <input type="text" name="name" placeholder="Enter Name" required />
+      <input type="number" name="phone" placeholder="Enter Phone" required />
+      <button type="submit">Add Contact</button>
     </form>
-    <script src="https://kit.fontawesome.com/a4636622a9.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/a4636622a9.js"
+      crossorigin="anonymous"
+    ></script>
     <script type="text/JavaScript" src="/js/script.js"></script>
-</body>
-
+  </body>
 </html>
