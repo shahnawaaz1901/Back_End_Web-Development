@@ -1,0 +1,169 @@
+body{
+    margin: 0px;
+    font-family: sans-serif;
+    font-size: 25px;
+}
+.text-center{
+    text-align: center;
+}
+
+h1{
+    margin-top: 10px;
+    color: grey;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+li{
+    width: 50%;
+    margin: 10px auto;
+    background-color: rgb(100,143,255);
+    color: white;
+    display: flex;
+}
+.contact{
+    width: 95%;
+    padding: 10px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+}
+.delete-btn{
+    width: 5%;
+    margin-top: 1%;
+    color: red;
+}
+
+form{
+    text-align: center;
+}
+
+form > input{
+    width: 20%;
+    padding: 2px 5px;
+    font-size: 20px;
+    margin: 25px 5px;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+input:focus{
+    outline: none;
+}
+
+button{
+    background-color: gray;
+    color: white;
+    padding: 5px 10px;
+    margin-left: 30px;
+    border: none;
+}
+.name{
+    min-width: 250px;
+}
+
+li:hover{
+    background-color: grey;
+    cursor:grab;
+}
+@media screen and (max-width:1100px){
+    li{
+        width: 60%;
+    }
+    form > input{
+        width: 30%;
+    }
+}
+
+@media screen and (max-width:900px){
+    li{
+        width: 70%;
+    }
+}
+@media screen and (max-width:800px){
+    li{
+        width: 80%;
+    }
+    form > input{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:700px){
+    li{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .name, .phone{
+        margin: 5px 0px;
+    }
+    form > input{
+        width: 60%;
+    }
+    form{
+        text-align: center;
+    }
+    button{
+        display: block;
+        width: 30%;
+        margin: auto;
+    }
+}
+
+
+
+@media screen and (max-width:500px){
+    li{
+        width: 95%;
+    }
+    .contact{
+        width: 96%;
+    }
+    .delete-btn{
+        width: 6%;
+    }
+    .name, .phone {
+        margin: 10px 0px;
+    }
+    form > input{
+        width: 70%;
+    }
+    button{
+        width: 40%;
+    }
+}
+@media screen and (max-width:400){
+    .contact{
+        width: 92%;
+    }
+    .delete-btn{
+        width: 8%;
+    }
+    .name, .phone{
+        width: 100%;
+        text-align: center;
+    }
+}
+@media screen and (max-width:350px){
+    li{
+        width: 100%;
+    }
+    .contact{
+        width: 93%;
+    }
+    .delete-btn{
+        width: 7%;
+    }
+    form > input{
+        width: 90%;
+    }
+    button{
+        width: 60%;
+    }
+}
