@@ -3,9 +3,10 @@ const http = require('http');
 const express = require('express');
 const path = require('path');
 const ejs = require('ejs');
-
 // Set Port
 const port = 8000;
+
+const db = require('./config/mongoose,.js');
 
 // Start the Server
 const app = express();
