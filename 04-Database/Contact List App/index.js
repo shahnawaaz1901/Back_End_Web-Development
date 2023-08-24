@@ -11,6 +11,7 @@ const db = require('./config/mongoose,.js');
 
 // Include Models or Schema
 const Contact = require('./models/contact.js');
+const { default: mongoose } = require('mongoose');
 
 
 // Start the Server
@@ -34,11 +35,24 @@ app.set('views',path.join(__dirname,'views'));
 let contacts = [];
 
 // Server Request URL
-app.get('/',function(request, response){
+app.get('/',async function(request, response){
+    /*Contact.find({},function(error, contact){
+        if(error){
+            console.log('Error While Fetching Data into Database');
+            return;
+        }
+
+        return response.render('index',{
+            title :"Contact List App",
+            Contact : contact
+        })
+    })*/
+    const doc = await Contact.find({});
     return response.render('index',{
         title :"Contact List App",
-        Contact : contacts,
+        Contact : doc,
     });
+    
 })
 // Send Data to the Server and Render It On Browser
 app.post('/create-contact', async function(request, response){
