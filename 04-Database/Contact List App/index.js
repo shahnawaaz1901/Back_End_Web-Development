@@ -7,7 +7,7 @@ const ejs = require('ejs');
 const port = 8000;
 
 // Include Database File
-const db = require('./config/mongoose,.js');
+const db = require('./config/mongoose,');
 
 // Include Models or Schema
 const Contact = require('./models/contact.js');
@@ -66,27 +66,32 @@ app.post('/create-contact', async function(request, response){
     /*
     await contact.save();
     */
-    await Contact.create({                                       // Create Object IntoDataBase
+    await Contact.create({                                 // Create Object IntoDataBase
         name : contact.name,                               // Store Name as Schema which mention in Database
         phone : contact.phone,                             // Store Phone as Schema which mention in Database
     })
+    console.log(contact.id);
     return response.redirect('back');
 })
 
 app.get('/delete-contact',async function(request, response){
     let id = request.query.id;
-    Contact.findByIdAndDelete(id);
-    try{
-        Contact.orders.deleteOne({"id":__id});
-    }catch(error){
-       console.log('Error',error);
-    }
+    console.log(id);
+    Contact.findOneAndDelete(id, function(err){
+        if(err){
+            console.log('error in deleting the object');
+            return;
+        }
+        return response.redirect('back');
+    }) 
+})
+    //Contact.findOne();
     /*
     let index = contacts.findIndex((contact)=>contact.phone == phone);
     contacts.splice(index, 1);
     */
-    response.redirect('/');
-})
+//     response.redirect('/');
+// })
 
 // Server Status
 app.listen(port, function(error){
