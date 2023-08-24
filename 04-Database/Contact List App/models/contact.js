@@ -28,3 +28,24 @@ const Contact = mongoose.model('Contact',contactSchema);
 
 // Export the Model
 module.exports = Contact;
+
+/* 
+    When you learn a New Programming Language Some Data Type has been pre defined
+    Similarly Some Data Type MongoDb is Used to Store Data in Database
+*/
+
+/* 
+    DataType of Schema
+1. String                   // Like General String Class
+2. Number                   // Stores Any Kind Number 
+3. Date                     // Use For Record When Data is Entered or Update
+4. Buffer                   // Use For divide small parts of a single huge links
+5. Boolean                  // it's True or False
+6. Mixed                
+7. ObjectId
+8. Array                    // Collection of Hetrogenous Data
+9. Decimal 128
+10. Map
+11. UUID
+
+*/

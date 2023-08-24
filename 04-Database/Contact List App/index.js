@@ -41,9 +41,22 @@ app.get('/',function(request, response){
     });
 })
 // Send Data to the Server and Render It On Browser
-app.post('/create-contact',function(request, response){
-    contacts.push(request.body);
-    response.redirect('/');
+app.post('/create-contact', async function(request, response){
+    // For Instead of Storing Contact into the Array Let's Directly Store into the Database
+    /*contacts.push(request.body);*/
+
+    /* Another Method to Create
+    const contact = new Contact({
+        name : request.body.name,
+        phone :request.body.phone,
+    })
+    await contact.save();
+    */
+    await Contact.create({                                            // Create Object IntoDataBase
+        name : request.body.name,                               // Store Name as Schema which mention in Database
+        phone : request.body.phone,                             // Store Phone as Schema which mention in Database
+    })
+    return response.redirect('back');
 })
 
 app.get('/delete-contact',function(request, response){
