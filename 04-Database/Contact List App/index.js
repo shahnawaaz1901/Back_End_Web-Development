@@ -6,7 +6,12 @@ const ejs = require('ejs');
 // Set Port
 const port = 8000;
 
+// Include Database File
 const db = require('./config/mongoose,.js');
+
+// Include Models or Schema
+const Contact = require('./models/contact.js');
+
 
 // Start the Server
 const app = express();
