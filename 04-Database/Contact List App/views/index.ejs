@@ -17,13 +17,12 @@
         <div class="contact">
             <div class="name"><%= eachContact.name %></div>
             <div class="phone">
-              <span>+91 -</span>
               <%= eachContact.phone %>
             </div>
         </div>
         <div class="delete-btn"> 
           <a
-            href="/delete-contact/?phone=<%= eachContact.phone %>"
+            href="/delete-contact/?id=<%= eachContact.id %>"
           >
             <i class="fa-solid fa-trash"></i>
           </a>

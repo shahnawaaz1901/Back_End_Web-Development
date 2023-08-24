@@ -32,7 +32,7 @@ app.set('view engine','ejs');
 // Set Path Where our ejs File is Stored
 app.set('views',path.join(__dirname,'views'));
 
-let contacts = [];
+// let contacts = [];
 
 // Server Request URL
 app.get('/',async function(request, response){
@@ -58,25 +58,33 @@ app.get('/',async function(request, response){
 app.post('/create-contact', async function(request, response){
     // For Instead of Storing Contact into the Array Let's Directly Store into the Database
     /*contacts.push(request.body);*/
-
-    /* Another Method to Create
+    // Another Method to Create
     const contact = new Contact({
         name : request.body.name,
         phone :request.body.phone,
     })
+    /*
     await contact.save();
     */
-    await Contact.create({                                            // Create Object IntoDataBase
-        name : request.body.name,                               // Store Name as Schema which mention in Database
-        phone : request.body.phone,                             // Store Phone as Schema which mention in Database
+    await Contact.create({                                       // Create Object IntoDataBase
+        name : contact.name,                               // Store Name as Schema which mention in Database
+        phone : contact.phone,                             // Store Phone as Schema which mention in Database
     })
     return response.redirect('back');
 })
 
-app.get('/delete-contact',function(request, response){
-    let phone = request.query.phone;
+app.get('/delete-contact',async function(request, response){
+    let id = request.query.id;
+    Contact.findByIdAndDelete(id);
+    try{
+        Contact.orders.deleteOne({"id":__id});
+    }catch(error){
+       console.log('Error',error);
+    }
+    /*
     let index = contacts.findIndex((contact)=>contact.phone == phone);
     contacts.splice(index, 1);
+    */
     response.redirect('/');
 })
 
