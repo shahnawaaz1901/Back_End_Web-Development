@@ -10,7 +10,7 @@ const port = 8000;
 const db = require('./config/mongoose,');
 
 // Include Models or Schema
-const Contact = require('./models/contact.js');
+const Contact = require('./models/contact');
 const { default: mongoose } = require('mongoose');
 
 
@@ -35,49 +35,45 @@ app.set('views',path.join(__dirname,'views'));
 // let contacts = [];
 
 // Server Request URL
-app.get('/',async function(request, response){
-    /*Contact.find({},function(error, contact){
+app.get('/',function(request, response){
+    // Function Callback is Only Support Till Previous Version of MongoDB
+    Contact.find({},function(error,contact){
         if(error){
-            console.log('Error While Fetching Data into Database');
+            console.log('Error',error);
             return;
         }
-
-        return response.render('index',{
-            title :"Contact List App",
-            Contact : contact
+        return response.render('index',
+        {
+            title : "Contact List App",
+            Contact : contact,
         })
-    })*/
-    const doc = await Contact.find({});
-    return response.render('index',{
-        title :"Contact List App",
-        Contact : doc,
-    });
-    
+    })
 })
 // Send Data to the Server and Render It On Browser
-app.post('/create-contact', async function(request, response){
+app.post('/create-contact',function(request, response){
     // For Instead of Storing Contact into the Array Let's Directly Store into the Database
-    /*contacts.push(request.body);*/
-    // Another Method to Create
-    const contact = new Contact({
-        name : request.body.name,
-        phone :request.body.phone,
+    
+    Contact.create({                                 // Create Object IntoDataBase
+        name : request.body.name,                               // Store Name as Schema which mention in Database
+        phone : request.body.phone,                             // Store Phone as Schema which mention in Database
+    },function(error, newContact){
+        if(error){
+            console.log('Error',error);
+            return;
+        }
+        // Here NewContact is Created By DataBase So it Have 2 Extra Keys __id and versionKey
+        // id is the id which is given by database when object is created to store into database
+        // v is version key which records how many time you change in schema
+        console.log('******',newContact);
+        return response.redirect('back');
     })
-    /*
-    await contact.save();
-    */
-    await Contact.create({                                 // Create Object IntoDataBase
-        name : contact.name,                               // Store Name as Schema which mention in Database
-        phone : contact.phone,                             // Store Phone as Schema which mention in Database
-    })
-    console.log(contact.id);
-    return response.redirect('back');
 })
 
-app.get('/delete-contact',async function(request, response){
+app.get('/delete-contact',function(request, response){
+    // Getting Id Using Query
     let id = request.query.id;
     console.log(id);
-    Contact.findOneAndDelete(id, function(err){
+    Contact.findByIdAndDelete(id, function(err){
         if(err){
             console.log('error in deleting the object');
             return;
@@ -85,13 +81,6 @@ app.get('/delete-contact',async function(request, response){
         return response.redirect('back');
     }) 
 })
-    //Contact.findOne();
-    /*
-    let index = contacts.findIndex((contact)=>contact.phone == phone);
-    contacts.splice(index, 1);
-    */
-//     response.redirect('/');
-// })
 
 // Server Status
 app.listen(port, function(error){
