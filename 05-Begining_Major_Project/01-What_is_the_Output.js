@@ -30,3 +30,14 @@ Which of the following command allows you to update the remote repository?
 3. update
 4. None of the Mentioned
 */
+
+/*
+Create a New Route Handler
+
+Select the statement which can be used to create a route handlers.(Multiple)
+
+1. var router = express.Router()                    // Correct
+2. let router = express.Router()                    // Correct
+3. var router = express.newRouter()
+4. var router = Router()
+*/

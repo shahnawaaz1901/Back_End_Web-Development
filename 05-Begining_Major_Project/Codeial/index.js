@@ -9,6 +9,8 @@
 const express = require('express');
 const app = express();
 
+// Set Route file in MiddleWare
+app.use('/',require('./routers/index'));
 // We Use Port 8000 But in Real Life or in Production Port 80 is Used
 const port = 8000;
 
@@ -32,4 +34,10 @@ app.listen(port, function(error){
 /* 
     For Ignoring Some Files on Upload to Github You Need to Create .gitignore file 
     and put folders which you would't want to upload or push
+*/
+
+/* 
+    WhenEver We Import Same Library in Two Files which is InterConnected Via 
+    Something then second file not import the library second file uses instance of
+    first file library which is import first.
 */
