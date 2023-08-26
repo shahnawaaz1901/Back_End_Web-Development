@@ -8,9 +8,9 @@
 // SetUp Express Server
 const express = require('express');
 const app = express();
-
+const route = require('./routers/index');
 // Set Route file in MiddleWare
-app.use('/',require('./routers/index'));
+app.use('/',route);
 // We Use Port 8000 But in Real Life or in Production Port 80 is Used
 const port = 8000;
 
