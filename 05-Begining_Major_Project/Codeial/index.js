@@ -8,9 +8,13 @@
 // SetUp Express Server
 const express = require('express');
 const app = express();
-const route = require('./routers/index');
 // Set Route file in MiddleWare
-app.use('/',route);
+app.use('/',require('./routers/index'));
+
+// SetUp View Engine(Use Set Function to SetUp ,Use function used to setup as middleware)
+app.set('view engine','ejs');
+app.set('views','./views');
+
 // We Use Port 8000 But in Real Life or in Production Port 80 is Used
 const port = 8000;
 
