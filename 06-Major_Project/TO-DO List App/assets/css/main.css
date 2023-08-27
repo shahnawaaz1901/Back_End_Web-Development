@@ -1,0 +1,33 @@
+body{
+    margin: 0px;
+    background-color: grey;
+}
+
+.container{
+    background-color: white;
+    width: 50%;
+    margin: auto;
+    border: 1px solid black;
+    padding: 0px 10px;
+}
+
+header h1{
+    text-align: center;
+}
+.description{
+    width: 100%;
+}
+.input-container > div{
+    padding: 10px 0px;
+}
+label{
+    display: block;
+}
+
+#dscr{
+    width: 98%;
+}
+
+.description input{
+    padding: 5px;
+}
