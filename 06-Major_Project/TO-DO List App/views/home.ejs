@@ -3,11 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
     <title><%= locals.title %></title>
 </head>
 <body>
     <div class="container">
-        
+        <div class="input-container">
+            <header>
+                <h1>To-Do List</h1>
+            </header>
+            <div class="description">
+                <label for="dscr">DESCRIPTION</label>
+                <input type="text" id="dscr" placeholder="What Do You Need to Do">
+            </div>
+            <div class="category-date">
+                <div class="category">
+                    <label for="category">CATEGORY</label>
+                    <select name="category" id="category">
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="School">School</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="date">
+                    <label for="date">Due Date</label>
+                    <input type="date" id="date" >
+                </div>
+            </div>
+            <div class="buttons">
+                <button name="add" type="submit" class="bg-dark">ADD TASK</button>
+                <button name="delete" type="submit" class="bg-danger">DELETE TASK</button>
+            </div>
+        </div>
+        <div class="output-container"></div>
+
     </div>
+    <script type="text/javaScript" src="./js/script.js"></script>
 </body>
 </html>
