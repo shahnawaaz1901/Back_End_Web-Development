@@ -7,8 +7,11 @@ const app = express();
 app.set('view engine','ejs');
 app.set('views','./views');
 
+// SetUp Controller For Home Page
 app.get('/',function(request, response){
-    return response.end('<h1>Hello Baby</h1>')
+    return response.render('home',{
+        title : "Contact List App",
+    });
 })
 
 app.listen(port, function(error){
