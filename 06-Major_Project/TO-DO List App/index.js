@@ -14,12 +14,29 @@ app.use(express.urlencoded());
 // For Static CSS and JavaScript File
 app.use(express.static('./assets'));
 
+let output = [{
+    checkbok : "Checked",
+    task : "My Name is Shahnawaaz Ansari",
+    date : "June 19, 2020",
+    work : "Personal"
+}]
+
 // SetUp Controller For Home Page
 app.get('/',function(request, response){
     return response.render('home',{
         title : "Contact List App",
+        todo : output,
     });
 })
+
+app.post('/create-todo',function(request, response){
+
+})
+
+app.get('/delete-todo',function(request, response){
+
+})
+
 
 app.listen(port, function(error){
     if(error){
