@@ -65,6 +65,7 @@ button{
     color: lightgray;
     padding: 10px 20px;
     border: none;
+    cursor: pointer;
 }
 i{
     color: white;

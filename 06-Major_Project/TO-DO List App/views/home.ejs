@@ -14,7 +14,12 @@
         </header>
         <div class="description bottom-border p-top-bottom">
           <label for="dscr" class="p-left m-bottom">DESCRIPTION</label>
-          <input type="text" id="dscr" placeholder="What Do You Need to Do" />
+          <input
+            type="text"
+            id="dscr"
+            name="description"
+            placeholder="What Do You Need to Do"
+          />
         </div>
         <form action="/create-todo" method="post">
           <div class="category-date bottom-border">
@@ -30,19 +35,23 @@
             </div>
             <div class="date p-top-bottom">
               <label for="date" class="p-left m-bottom">DUE DATE</label>
-              <input type="date" id="date" />
+              <input type="date" name="date" id="date" />
             </div>
           </div>
         </form>
         <div class="buttons bottom-border">
-          <button name="add" type="submit" class="bg-dark">
-            <i class="fa-solid fa-plus"></i>
-            <span>ADD TASK</span>
-          </button>
-          <button name="delete" type="submit" class="bg-danger">
-            <i class="fa-solid fa-trash"></i>
-            <span>DELETE TASK</span>
-          </button>
+          <a href="/create-todo">
+            <button name="add" type="submit" class="bg-dark">
+              <i class="fa-solid fa-plus"></i>
+              <span>ADD TASK</span>
+            </button>
+          </a>
+          <a href="/delete-todo">
+            <button name="delete" type="submit" class="bg-danger">
+              <i class="fa-solid fa-trash"></i>
+              <span>DELETE TASK</span>
+            </button>
+          </a>
         </div>
       </div>
       <div class="output-container"></div>
