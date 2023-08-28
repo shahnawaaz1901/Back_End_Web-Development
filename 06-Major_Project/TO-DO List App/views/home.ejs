@@ -1,45 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
     <title><%= locals.title %></title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="input-container">
-            <header>
-                <h1>To-Do List</h1>
-            </header>
-            <div class="description">
-                <label for="dscr">DESCRIPTION</label>
-                <input type="text" id="dscr" placeholder="What Do You Need to Do">
-            </div>
-            <div class="category-date">
-                <div class="category">
-                    <label for="category">CATEGORY</label>
-                    <select name="category" id="category">
-                        <option value="Personal">Personal</option>
-                        <option value="Work">Work</option>
-                        <option value="School">School</option>
-                        <option value="Cleaning">Cleaning</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-                <div class="date">
-                    <label for="date">Due Date</label>
-                    <input type="date" id="date" >
-                </div>
-            </div>
-            <div class="buttons">
-                <button name="add" type="submit" class="bg-dark">ADD TASK</button>
-                <button name="delete" type="submit" class="bg-danger">DELETE TASK</button>
-            </div>
+      <div class="input-container">
+        <header class="bottom-border">
+          <h1>TODO App</h1>
+        </header>
+        <div class="description bottom-border p-top-bottom">
+          <label for="dscr" class="p-left m-bottom">DESCRIPTION</label>
+          <input type="text" id="dscr" placeholder="What Do You Need to Do" />
         </div>
-        <div class="output-container"></div>
-
+        <form action="/create-todo" method="post">
+          <div class="category-date bottom-border">
+            <div class="category p-top-bottom">
+              <label for="category" class="p-left m-bottom">CATEGORY</label>
+              <select name="category" id="category">
+                <option value="Personal">Personal</option>
+                <option value="Work">Work</option>
+                <option value="School">School</option>
+                <option value="Cleaning">Cleaning</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="date p-top-bottom">
+              <label for="date" class="p-left m-bottom">DUE DATE</label>
+              <input type="date" id="date" />
+            </div>
+          </div>
+        </form>
+        <div class="buttons bottom-border">
+          <button name="add" type="submit" class="bg-dark">
+            <i class="fa-solid fa-plus"></i>
+            <span>ADD TASK</span>
+          </button>
+          <button name="delete" type="submit" class="bg-danger">
+            <i class="fa-solid fa-trash"></i>
+            <span>DELETE TASK</span>
+          </button>
+        </div>
+      </div>
+      <div class="output-container"></div>
     </div>
+    <script
+      src="https://kit.fontawesome.com/a4636622a9.js"
+      crossorigin="anonymous"
+    ></script>
     <script type="text/javaScript" src="./js/script.js"></script>
-</body>
+  </body>
 </html>

@@ -1,18 +1,22 @@
 body{
-    margin: 0px;
-    background-color: grey;
+    margin: 5px;
+    background-color: rgb(189,190,193);
+    font-size: 18px;
+    color: lightslategrey;
 }
 
 .container{
     background-color: white;
     width: 50%;
     margin: auto;
-    border: 1px solid black;
     padding: 0px 10px;
 }
 
 header h1{
+    padding-top: 30px;
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+
 }
 .description{
     width: 100%;
@@ -24,10 +28,71 @@ label{
     display: block;
 }
 
-#dscr{
+.description > input{
     width: 98%;
+    padding: 5px;
+    border: none;
 }
 
-.description input{
-    padding: 5px;
+.description > input:focus{
+    outline: none;
 }
+.category-date{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.category-date > div{
+    width: 49%;
+}
+
+select, .date > input{
+    width: 90%;
+    border: transparent;
+}
+
+select:focus, .date > input:focus{
+    outline: none;
+}
+.buttons{
+    text-align: center;
+}
+.description:focus, .category:focus, .date:focus{
+    background-color: grey;
+}
+button{
+    margin: 10px;
+    color: lightgray;
+    padding: 10px 20px;
+    border: none;
+}
+i{
+    color: white;
+    margin-right: 10px;
+    font-weight: 900;
+}
+.bg-dark{
+    background-color: rgb(95,94,95);
+}
+
+.bg-danger{
+    background-color: rgb(236,56,34);
+}
+
+.bottom-border{
+    border-bottom: 1px solid grey;
+}
+
+.p-top-bottom{
+    padding: 10px 0px;
+}
+.m-bottom{
+    margin-bottom: 5px;
+}
+.p-left{
+    padding-left: 10px;
+}
+.category:focus{
+    background-color: grey;
+}
+
