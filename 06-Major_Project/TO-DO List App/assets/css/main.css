@@ -56,14 +56,13 @@ select:focus, .date > input:focus{
 }
 .buttons{
     text-align: center;
+    padding: 20px 0px;
 }
-.description:focus, .category:focus, .date:focus{
-    background-color: grey;
-}
+
 button{
     margin: 10px;
     color: lightgray;
-    padding: 10px 20px;
+    padding: 15px 20px;
     border: none;
     cursor: pointer;
 }
@@ -72,8 +71,9 @@ i{
     margin-right: 10px;
     font-weight: 900;
 }
+
 .bg-dark{
-    background-color: rgb(95,94,95);
+    background-color: rgb(80, 80, 80);
 }
 
 .bg-danger{
@@ -97,3 +97,6 @@ i{
     background-color: grey;
 }
 
+.due-date i{
+    color: lightslategrey;
+}
