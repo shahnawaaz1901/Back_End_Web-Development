@@ -1,5 +1,5 @@
 body{
-    margin: 5px;
+    /* margin: 5px; */
     background-color: rgb(189,190,193);
     font-size: 18px;
     color: lightslategrey;
@@ -99,4 +99,27 @@ i{
 
 .due-date i{
     color: lightslategrey;
+}
+
+.output{
+    display: flex;
+    padding: 5px;
+}
+
+.output .description{
+    margin-left: 30px;
+}
+#checkbox{
+    margin-top: 10px;
+    height: 15px;
+    width: 15px;
+}
+.task, .due-date{
+    margin:10px 0px ;
+}
+.task{
+    font-weight: 550;
+}
+.due-date{
+    font-weight: 100;
 }

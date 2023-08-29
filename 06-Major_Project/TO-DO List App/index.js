@@ -30,7 +30,8 @@ app.get('/',function(request, response){
 })
 
 app.post('/create-todo',function(request, response){
-
+    console.log(request.body);
+    return response.redirect('/');
 })
 
 app.get('/delete-todo',function(request, response){
