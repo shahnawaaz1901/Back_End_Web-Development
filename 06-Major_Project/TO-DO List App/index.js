@@ -1,24 +1,32 @@
 // SetUp Express
 const express = require('express');
 const port = 8000;
-const app = express();
+const ejs = require('ejs');
 // const db = require('./config/index');
+
+
+// Firing Up Server
+const app = express();
+
+// For Static CSS and JavaScript File
+app.use(express.static('./assets'));
+
+// For Decode the Data Received By the User
+app.use(express.urlencoded());
 
 // Set View Engine
 app.set('view engine','ejs');
 app.set('views','./views');
 
-// For Decode the Data Received By the User
-app.use(express.urlencoded());
 
-// For Static CSS and JavaScript File
-app.use(express.static('./assets'));
+
+
 
 let output = [{
-    checkbok : "Checked",
+    checkbox : "",
     task : "My Name is Shahnawaaz Ansari",
     date : "June 19, 2020",
-    work : "Personal"
+    work : "Personal",
 }]
 
 // SetUp Controller For Home Page
@@ -31,11 +39,17 @@ app.get('/',function(request, response){
 
 app.post('/create-todo',function(request, response){
     console.log(request.body);
+    // let newTodo = {
+    //     task : request.body.task,
+    //     date : "June 19, 2020",
+    //     work : "Personal",
+    // }
     return response.redirect('/');
 })
 
 app.get('/delete-todo',function(request, response){
-
+    console.log(request);
+    return response.redirect('/');
 })
 
 

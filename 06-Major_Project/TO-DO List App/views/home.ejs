@@ -12,16 +12,16 @@
         <header class="bottom-border">
           <h1>TODO App</h1>
         </header>
-        <div class="description bottom-border p-top-bottom">
-          <label for="dscr" class="p-left m-bottom">DESCRIPTION</label>
-          <input
-            type="text"
-            id="dscr"
-            name="description"
-            placeholder="What Do You Need to Do"
-          />
-        </div>
-        <form action="/create-todo" method="post">
+        <form action="/create-todo" method="POST">
+          <div class="description bottom-border p-top-bottom">
+            <label for="dscr" class="p-left m-bottom">DESCRIPTION</label>
+            <input
+              type="text"
+              id="dscr"
+              name="description"
+              placeholder="What Do You Need to Do"
+            />
+          </div>
           <div class="category-date bottom-border">
             <div class="category p-top-bottom">
               <label for="category" class="p-left m-bottom">CATEGORY</label>
@@ -38,31 +38,27 @@
               <input type="date" name="date" id="date" />
             </div>
           </div>
-        </form>
-        <div class="buttons bottom-border">
-          <a href="/create-todo">
-            <button name="add" type="submit" class="bg-dark">
-              <i class="fa-solid fa-plus"></i>
-              <span>ADD TASK</span>
-            </button>
-          </a>
-          <a href="/delete-todo">
-            <button name="delete" type="submit" class="bg-danger">
-              <i class="fa-solid fa-trash"></i>
-              <span>DELETE TASK</span>
-            </button>
-          </a>
+          <div class="buttons bottom-border">
+              <button name="add" type="submit" class="bg-dark">
+                <i class="fa-solid fa-plus"></i>
+                <span>ADD TASK</span>
+              </button>
+              <button name="delete" type="submit" class="bg-danger">
+                <a href="/delete-todo">
+                  <i class="fa-solid fa-trash"></i>
+                  <span>DELETE TASK</span>
+                </a>
+              </button>
+            </form>
         </div>
       </div>
       <div class="output-container">
         <div class="output">
           <div class="checkbox">
-            <input type="checkbox" name="select" id="checkbox">
+            <input type="checkbox" name="select" id="checkbox" />
           </div>
           <div class="description">
-            <div class="task">
-              My Name is Shahnawaaz Ansari
-            </div>
+            <div class="task">My Name is Shahnawaaz Ansari</div>
             <div class="due-date">
               <i class="fa-solid fa-calendar-days"></i>
               <span>June 19, 2001</span>

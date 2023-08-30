@@ -28,20 +28,22 @@ label{
     display: block;
 }
 
-.description > input{
+input{
     width: 98%;
     padding: 5px;
     border: none;
 }
 
-.description > input:focus{
+input:focus{
     outline: none;
 }
 .category-date{
     display: flex;
     flex-wrap: wrap;
 }
-
+.category{
+    border-right: 1px solid grey;
+}
 .category-date > div{
     width: 49%;
 }
