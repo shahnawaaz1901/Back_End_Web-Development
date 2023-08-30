@@ -22,12 +22,7 @@ app.set('views','./views');
 
 
 
-let output = [{
-    checkbox : "",
-    task : "My Name is Shahnawaaz Ansari",
-    date : "June 19, 2020",
-    work : "Personal",
-}]
+let output = [{}];
 
 // SetUp Controller For Home Page
 app.get('/',function(request, response){
@@ -38,12 +33,14 @@ app.get('/',function(request, response){
 })
 
 app.post('/create-todo',function(request, response){
-    console.log(request.body);
-    // let newTodo = {
-    //     task : request.body.task,
-    //     date : "June 19, 2020",
-    //     work : "Personal",
-    // }
+    let task = request.body;
+    console.log(task);
+    let newTodo = {
+        description : task.description,
+        category : task.category,
+        date : task.date,
+    }
+    output.push(newTodo);
     return response.redirect('/');
 })
 

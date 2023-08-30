@@ -53,19 +53,25 @@
         </div>
       </div>
       <div class="output-container">
+        <%for(let everyTodo in todo){%>
         <div class="output">
           <div class="checkbox">
             <input type="checkbox" name="select" id="checkbox" />
           </div>
           <div class="description">
-            <div class="task">My Name is Shahnawaaz Ansari</div>
+            <div class="task">
+              <%= everyTodo.description %>
+            </div>
             <div class="due-date">
               <i class="fa-solid fa-calendar-days"></i>
-              <span>June 19, 2001</span>
+              <span>
+                <%= everyTodo.date %>
+              </span>
             </div>
           </div>
         </div>
         <div class="category"></div>
+        <%}%>
       </div>
     </div>
     <script
