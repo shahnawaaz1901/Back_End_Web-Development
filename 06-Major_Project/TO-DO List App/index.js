@@ -36,6 +36,7 @@ app.post('/create-todo',function(request, response){
     let task = request.body;
     console.log(task);
     let newTodo = {
+        mark : false,
         description : task.description,
         category : task.category,
         date : task.date,
