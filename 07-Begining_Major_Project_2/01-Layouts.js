@@ -5,4 +5,9 @@
             Feed or timeline part is Called Variable part Because it Changes According to
             the User, the whole structure of common and variable part is called Layout.
 
+
+    Layouts Creates a Structure where we decide where we want to render header and footer ,
+    variable part, So that we creates a block of page which is same for all user but in
+    the same block content of is dynamic
+
 */
