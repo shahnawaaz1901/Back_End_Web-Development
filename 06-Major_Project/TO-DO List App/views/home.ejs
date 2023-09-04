@@ -3,6 +3,98 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" /> <!-- Updated path -->
+    <title><%= title %></title> <!-- Removed "locals." prefix -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="input-container">
+        <header class="bottom-border">
+          <h1>TODO App</h1>
+        </header>
+        <form action="/create-todo" method="POST">
+          <div class="description bottom-border p-top-bottom">
+            <label for="dscr" class="p-left m-bottom">DESCRIPTION</label>
+            <input
+              type="text"
+              id="dscr"
+              name="description"
+              placeholder="What Do You Need to Do"
+            />
+          </div>
+          <div class="category-date bottom-border">
+            <div class="category p-top-bottom">
+              <label for="category" class="p-left m-bottom">CATEGORY</label>
+              <select name="category" id="category">
+                <option value="Personal">Personal</option>
+                <option value="Work">Work</option>
+                <option value="School">School</option>
+                <option value="Cleaning">Cleaning</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="date p-top-bottom">
+              <label for="date" class="p-left m-bottom">DUE DATE</label>
+              <input type="date" name="date" id="date" />
+            </div>
+          </div>
+          <div class="buttons bottom-border">
+            <button type="submit" class="bg-dark">
+              <i class="fa-solid fa-plus"></i>
+              <span>ADD TASK</span>
+            </button>
+            <button name="delete" type="submit" class="bg-danger">
+              <a href="/delete-todo">
+                <i class="fa-solid fa-trash"></i>
+                <span>DELETE TASK</span>
+              </a>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="output-container">
+        <% for(let i = 0; i < todo.length; i++) { %>
+          <div class="output m-bottom">
+            <div class="checkbox">
+              <input type="checkbox" name="select" id="checkbox<%= i %>" /> <!-- Unique ID -->
+            </div>
+            <div class="description">
+              <div class="task">
+                <%= todo[i].description %> <!-- Access properties using todo[i] -->
+              </div>
+              <div class="due-date">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>
+                  <% if(todo[i].date){%>
+                    <%= todo[i].date %> <!-- Access properties using todo[i] -->
+                  <% }else{ %>
+                    No Deadline
+                  <%}%>
+                </span>
+              </div>
+            </div>
+            <div class="category">
+              <%= todo[i].category %> <!-- Access properties using todo[i] -->
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/a4636622a9.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="/js/script.js"></script> <!-- Updated path -->
+  </body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/main.css" />
     <title><%= locals.title %></title>
   </head>
@@ -39,7 +131,7 @@
             </div>
           </div>
           <div class="buttons bottom-border">
-              <button name="add" type="submit" class="bg-dark">
+              <button type="submit" class="bg-dark">
                 <i class="fa-solid fa-plus"></i>
                 <span>ADD TASK</span>
               </button>
@@ -53,10 +145,11 @@
         </div>
       </div>
       <div class="output-container">
-        <%for(let everyTodo in todo){%>
-        <div class="output">
+        <%for(let everyTodo in locals.todo){%>
+
+          <div class="output m-bottom">
           <div class="checkbox">
-            <input type="checkbox" name="select" id="checkbox" />
+            <input type="checkbox" name="select" id="checkbox"  />
           </div>
           <div class="description">
             <div class="task">
@@ -65,14 +158,17 @@
             <div class="due-date">
               <i class="fa-solid fa-calendar-days"></i>
               <span>
+               
                 <%= everyTodo.date %>
               </span>
             </div>
           </div>
         </div>
-        <div class="category"></div>
-        <%}%>
-      </div>
+          <div class="category">
+            <%= everyTodo.category %>
+          </div>
+          <%}%>
+        </div>
     </div>
     <script
       src="https://kit.fontawesome.com/a4636622a9.js"
@@ -80,4 +176,4 @@
     ></script>
     <script type="text/javaScript" src="./js/script.js"></script>
   </body>
-</html>
+</html> -->
