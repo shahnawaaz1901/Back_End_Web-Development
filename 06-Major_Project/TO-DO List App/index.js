@@ -19,9 +19,6 @@ app.set('view engine','ejs');
 app.set('views','./views');
 
 
-
-
-
 let output = [];
 
 // SetUp Controller For Home Page
