@@ -40,13 +40,19 @@ app.post('/create-todo',function(request, response){
         description : task.description,
         category : task.category,
         date : task.date,
+        id : Date.now().toString()
     }
+    console.log(newTodo.id);
     output.push(newTodo);
     return response.redirect('/');
 })
 
 app.get('/delete-todo',function(request, response){
-    console.log(request);
+    const newTodo = output.filter((every)=>{
+        return every.mark == true;
+    });
+    console.log(newTodo);
+    output = newTodo;
     return response.redirect('/');
 })
 
