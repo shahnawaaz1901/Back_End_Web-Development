@@ -31,6 +31,9 @@ app.get('/',function(request, response){
 
 app.post('/create-todo',function(request, response){
     let task = request.body;
+    if(!task.description){
+        return response.redirect('/');
+    }
     console.log(task);
     let newTodo = {
         mark : false,
