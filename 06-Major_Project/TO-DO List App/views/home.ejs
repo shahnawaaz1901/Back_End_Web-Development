@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/main.css" /> <!-- Updated path -->
-    <title><%= title %></title> <!-- Removed "locals." prefix -->
+    <link rel="stylesheet" href="/css/main.css" />
+    <!-- Updated path -->
+    <title><%= title %></title>
+    <!-- Removed "locals." prefix -->
   </head>
   <body>
     <div class="container">
@@ -54,29 +56,33 @@
       </div>
       <div class="output-container">
         <% for(let i = 0; i < todo.length; i++) { %>
-          <div class="output bottom-border">
-            <div class="checkbox">
-              <input type="checkbox" name="select" id="checkbox<%= i %>" /> <!-- Unique ID -->
+        <div class="output bottom-border">
+          <div class="checkbox">
+            <% if(todo[i].mark){ %>
+            <input type="checkbox" name="select" checked />
+            <%}else{%>
+            <input type="checkbox" name="select" />
+            <%}%>
+          </div>
+          <div class="description">
+            <div class="task">
+              <%= todo[i].description %>
+              <!-- Access properties using todo[i] -->
             </div>
-            <div class="description">
-              <div class="task">
-                <%= todo[i].description %> <!-- Access properties using todo[i] -->
-              </div>
-              <div class="due-date">
-                <i class="fa-solid fa-calendar-days"></i>
-                <span>
-                  <% if(todo[i].date){%>
-                    <%= todo[i].date %> <!-- Access properties using todo[i] -->
-                  <% }else{ %>
-                    No Deadline
-                  <%}%>
-                </span>
-              </div>
-            </div>
-            <div class="category">
-              <%= todo[i].category %> <!-- Access properties using todo[i] -->
+            <div class="due-date">
+              <i class="fa-solid fa-calendar-days"></i>
+              <span>
+                <% if(todo[i].date){%> <%= todo[i].date %>
+                <!-- Access properties using todo[i] -->
+                <% }else{ %> No Deadline <%}%>
+              </span>
             </div>
           </div>
+          <div class="category">
+            <%= todo[i].category %>
+            <!-- Access properties using todo[i] -->
+          </div>
+        </div>
         <% } %>
       </div>
     </div>
@@ -84,11 +90,10 @@
       src="https://kit.fontawesome.com/a4636622a9.js"
       crossorigin="anonymous"
     ></script>
-    <script type="text/javascript" src="/js/script.js"></script> <!-- Updated path -->
+    <script type="text/javascript" src="/js/script.js"></script>
+    <!-- Updated path -->
   </body>
 </html>
-
-
 
 <!-- <!DOCTYPE html>
 <html lang="en">
