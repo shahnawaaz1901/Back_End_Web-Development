@@ -2,7 +2,7 @@
 const express = require('express');
 const port = 8000;
 const ejs = require('ejs');
-// const db = require('./config/index');
+const db = require('./config/mongoose');
 
 
 // Firing Up Server
