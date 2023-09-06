@@ -1,10 +1,14 @@
 const express = require('express');
+
 // Import Home Controller
 const homeController = require('../controllers/home_controller');
+
 // For Managing Routes we Need to Use express's Route function
 const router = express.Router();
+
 // Set Home Controller For Default Route
 router.get('/',homeController.home);
+
 // Use Method is Use to Send Request to other Route File
 
 // Set Users All Route to Users file
