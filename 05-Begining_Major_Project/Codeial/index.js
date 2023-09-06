@@ -8,6 +8,13 @@
 // SetUp Express Server
 const express = require('express');
 const app = express();
+
+// Import Express Layouts
+const expressLayouts = require('express-ejs-layouts');
+app.use(expressLayouts);
+
+
+
 // Set Route file in MiddleWare
 app.use('/',require('./routers/index'));
 
