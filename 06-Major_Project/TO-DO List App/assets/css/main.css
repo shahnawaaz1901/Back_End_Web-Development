@@ -106,17 +106,24 @@ i{
 
 .output{
     display: flex;
-    padding: 20px;
+    padding: 20px 0px;
 }
 
 .output .description{
-    margin-left: 30px;
+    border: 1px solid black;
+    /* margin-left: 30px; */
 }
-.checkbox > input{
-    /* margin-top: 15px; */
-    height: 20px;
-    width: 20px;
+
+.checkbox{
+    width: 3%;
+    border: 1px solid black;
+    vertical-align: middle;
 }
+.checkbox input{
+    width: 100%;
+    height: 100%;
+}
+
 .due-date{
     margin:10px 0px ;
 }
