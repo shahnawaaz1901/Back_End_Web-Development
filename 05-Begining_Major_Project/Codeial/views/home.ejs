@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= locals.title %></title>
-</head>
-<body>
-    <h1> Hello Baby !! What's Up My Name is Shahnawaaz Ansari And this is <%=locals.title%> Page</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <!-- Instead of Adding Header and Footer in Every File Use Partials Which Contains 
+        Header and Footer Like Common Stuff and whenever we Require we Need to write one
+         line and import the code -->
+    <!-- <header>This is Header</header> -->
+    <%- include('__header'); %>                  <!--Use Partial to Import Header-->
+    <h1>
+      Hello Baby !! What's Up My Name is Shahnawaaz Ansari And this is
+        <%= title %> Page
+    </h1>
+    <%- include('__footer'); %>                  <!--Use Partial to Import Footer-->
+    <!-- <footer>This is Footer</footer> -->
+  </body>
 </html>

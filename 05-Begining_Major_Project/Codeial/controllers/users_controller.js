@@ -1,3 +1,5 @@
 module.exports.profile = function(request, response){
-    return response.end('Users Profile Section');
+    return response.render('users',{
+        title : "Profile | Codeial",
+    });
 }
