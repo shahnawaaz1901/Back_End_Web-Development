@@ -56,7 +56,7 @@
       </div>
       <div class="output-container">
         <% for(let i = 0; i < todo.length; i++) { %>
-        <div class="output bottom-border">
+        <div class="output bottom-border" id= "<%= todo[i].id %>" >
           <div class="checkbox">
             <% if(todo[i].mark){ %>
             <input type="checkbox" name="select" checked />
@@ -79,11 +79,9 @@
             </div>
           </div>
           <div class="category">
-            <!-- <% if( todo[i].category == 'Personal'){%> -->
-              <div class="bg-dark">
+              <div>
                 <%= todo[i].category %>
               </div>
-              <!-- <%}%> -->
             <!-- Access properties using todo[i] -->
           </div>
         </div>

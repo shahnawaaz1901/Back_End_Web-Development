@@ -110,13 +110,12 @@ i{
 }
 
 .output .description{
-    border: 1px solid black;
-    /* margin-left: 30px; */
+    /* border: 1px solid black; */
+    padding-left: 20px;
 }
 
 .checkbox{
     width: 3%;
-    border: 1px solid black;
     vertical-align: middle;
 }
 .checkbox input{
@@ -132,4 +131,11 @@ i{
 }
 .due-date{
     font-weight: 100;
+}
+
+.output-container .category{
+    /* border: 1px solid black; */
+    margin: auto;
+    /* vertical-align: middle; */
+    padding: 10px;
 }

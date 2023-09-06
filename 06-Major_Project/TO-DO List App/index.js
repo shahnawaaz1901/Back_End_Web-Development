@@ -34,7 +34,7 @@ app.post('/create-todo',function(request, response){
     if(!task.description){
         return response.redirect('/');
     }
-    console.log(task);
+    // console.log(task);
     let newTodo = {
         mark : false,
         description : task.description,
@@ -42,7 +42,7 @@ app.post('/create-todo',function(request, response){
         date : task.date,
         id : Date.now().toString()
     }
-    console.log(newTodo.id);
+    console.log(newTodo);
     output.push(newTodo);
     return response.redirect('/');
 })
