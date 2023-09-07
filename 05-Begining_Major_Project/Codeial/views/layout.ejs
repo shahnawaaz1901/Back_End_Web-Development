@@ -3,13 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 
+        For Every Page A Different Style is Required Because Some times
+        It's Heavy to load one css file for home user profile or any other 
+        kind of page and Debugging or Refactoring of Styling is Hard For this we Need
+        to Put different different Style for Different Pages
+     -->
     <link rel="stylesheet" href="/css/layout.css">
+    <!-- 
+        Because Every File have their css file with link tag so that every time we loaded
+        the page link tag inside the body tag which is not good, so fix this we set layout
+        extractStyles and layout extractScripts is true so that we able to extract link tag
+        and script tag from body and put it when we want using style and script variable
+        Like this
+     -->
+    <%- style %>
     <title><%= title %></title>
 </head>
 <body>
     <%- include('__header'); %>                       <!--Common Header For All Files-->
+
     <!-- Variable Part which is filled by whatevery ejs file is render by controller -->
     <%- body %>
+
     <%- include('__footer'); %>                       <!--Common Footer Fol All Files-->
+    <%- script %>
 </body>
 </html>
