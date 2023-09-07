@@ -9,6 +9,9 @@
 const express = require('express');
 const app = express();
 
+//Setup Database
+const db = require('./config/mongoose');
+
 // Setting Up Static Files
 app.use(express.static('./asset'));
 
@@ -26,7 +29,7 @@ app.set('view engine','ejs');
 app.set('views','./views');
 
 
-// For Extract Css and Script tag from body and Put it where we want to put
+// For Extract Css and Script tag from body and Put it where we want to put in Layouts
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 
