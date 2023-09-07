@@ -12,7 +12,7 @@ router.get('/',homeController.home);
 // Use Method is Use to Send Request to other Route File
 
 // Set Users All Route to Users file
-router.use('/users',require('./users'));                    // Transfer Route to users file
+router.use('/user',require('./users'));                    // Transfer Route to users file
 
 router.use('/contact-us', require('./contact'));            // Transfer Route to contact file
 
