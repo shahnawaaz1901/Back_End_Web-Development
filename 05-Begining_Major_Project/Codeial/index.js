@@ -9,6 +9,11 @@
 const express = require('express');
 const app = express();
 
+// Setting Up Static Files
+app.use(express.static('./asset'));
+
+
+
 // Import Express Layouts
 const expressLayouts = require('express-ejs-layouts');
 app.use(expressLayouts);
