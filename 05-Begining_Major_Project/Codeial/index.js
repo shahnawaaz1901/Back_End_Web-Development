@@ -18,14 +18,17 @@ app.use(express.static('./asset'));
 const expressLayouts = require('express-ejs-layouts');
 app.use(expressLayouts);
 
-
-
 // Set Route file in MiddleWare
 app.use('/',require('./routers/index'));
 
 // SetUp View Engine(Use Set Function to SetUp ,Use function used to setup as middleware)
 app.set('view engine','ejs');
 app.set('views','./views');
+
+
+// For Extract Css and Script tag from body and Put it where we want to put
+app.set('layout extractStyles',true);
+app.set('layout extractScripts',true);
 
 // We Use Port 8000 But in Real Life or in Production Port 80 is Used
 const port = 8000;
