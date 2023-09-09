@@ -12,13 +12,24 @@ const app = express();
 //Setup Database
 const db = require('./config/mongoose');
 
+
+// For Layouts
+const expressLayouts = require('express-ejs-layouts');
+
+
+// Import Cookie
+const cookieParser = require('cookie-parser');
+
 // Setting Up Static Files
 app.use(express.static('./asset'));
 
+// For Encoding the form Data
+app.use(express.urlencoded());
 
+// For Cookie
+app.use(cookieParser());
 
 // Import Express Layouts
-const expressLayouts = require('express-ejs-layouts');
 app.use(expressLayouts);
 
 // Set Route file in MiddleWare
