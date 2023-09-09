@@ -1,6 +1,6 @@
 // Render User Profile Page
 module.exports.profile = function(request, response){
-    return response.render('users_profile',{
+    return response.render('user_profile',{
         title : "Profile | Codeial",
     });
 }
@@ -18,4 +18,12 @@ module.exports.signIn = function(request, response){
     return response.render('user_sign_in',{
         title : "Sign In | Codeial",
     });
+}
+
+module.exports.create = function(request, response){
+    // TODO Later
+}
+
+module.exports.createSession = function(request, response){
+    // TODO Later
 }
