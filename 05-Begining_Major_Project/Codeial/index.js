@@ -63,3 +63,36 @@ app.listen(port, function(error){
     Something then second file not import the library second file uses instance of
     first file library which is import first.
 */
+
+/*
+    Cookies : Cookie is a file that is Stored by the browser is sent every request 
+            to the server and sever sends back the exact same file to the browser.
+            Cookie is Edited By the Browser and Server Also.
+
+    Usage of Cookie : Cookie use to store some kind of data or information related to 
+            the user to enstablishing the user's identity and products which user browse 
+            for.
+    Cookie stores data in key Value Pairs same as object .
+    
+    Cookie is uses to find out which user sends the request, because every time user post
+    or do some other kind of thing it's very painful to enter id and password again and again
+
+    Limited Storage in Browser is Available to stores the cookie if size of cookie exceed that
+    limit browser automatically clear the cookie
+
+    Cookie Stores the Identity Because every time you refresh the page in facebook then it's not
+    asking you id and password again and again because your identity stores in cookie. and cookie
+    is encrypted so that you can't be understand it, and whenever you loggedin in into the facebook
+    and if you clear the facebook cookie then when ever your page is refreshed you need to loggedin
+    again because facebook lost your identity which is stored in cookie and whenever you clear the 
+    cookie your identity was lost and for knowing your identity facebook loggedout your profile 
+    automatically and tells you to re-logged in so that again your identity and connection would be 
+    enstablished
+
+    EveryTime You loggedin your id password goes to server then server sends id password to the 
+    database to check if this id password is exist or not. if id password is exist then a controller
+    function which is exist on server ceate an encrypted token for you which is stores in cookie
+    and sends to the browser so that what ever action you do cookie is transact in every action
+
+
+*/
