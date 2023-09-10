@@ -24,31 +24,37 @@ module.exports.signIn = function(request, response){
     });
 }
 
-module.exports.create = function(request, response){
+module.exports.create = async function(req, res) {
+    try {
+        if (req.body.password != req.body.confirm_password) {
+            return res.redirect('back');
+        }
+
+        let user = await User.findOne({ email: req.body.email });
+        console.log(user);
+        if (user.Email != req.body.Email) {
+            user = await User.create(req.body);
+            return res.redirect('/user/sign-in');
+        } else {
+            console.log('Inside Else');
+            return res.redirect('back');
+        }
+    } catch (error) {
+        console.log('Error:', error);
+        return res.status(500).send('Internal Server Error');
+    }
+}
+
+/*module.exports.create = function(request, response){
     // TODO Later
     console.log(request.body);
     if(request.body.Password != request.body.ConfirmPassword){
         return response.redirect('back');
     }
-    User.findOne({email : request.body.email},function(error, user){
-        if(error){
-            console.log('Error While Finding User', error);
-            return;
-        }
-        if(!user){
-            User.create(request.body, function(error, user){
-                if(error){
-                    console.log('Error while Sign Up');
-                    return response.redirect('back');
-                }
-                console.log(user);
-            });
-        }else{
-            return response.redirect('back');
-        }
-    })
+    User.findOne({email : request.body.email})
 }
-
 module.exports.createSession = function(request, response){
     // TODO Later
 }
+
+*/
