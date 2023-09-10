@@ -19,6 +19,7 @@ const expressLayouts = require('express-ejs-layouts');
 
 // Import Cookie
 const cookieParser = require('cookie-parser');
+// const cookieParser = require('cookie-parser');
 
 // Setting Up Static Files
 app.use(express.static('./asset'));
@@ -105,5 +106,7 @@ app.listen(port, function(error){
     function which is exist on server ceate an encrypted token for you which is stores in cookie
     and sends to the browser so that what ever action you do cookie is transact in every action
 
-
+    Cookie is send and received every time. When you sends request to the server Cookie is sent by the 
+    browser with request and whenever server respond cookie is received to the browser which is sent 
+    by the server.
 */

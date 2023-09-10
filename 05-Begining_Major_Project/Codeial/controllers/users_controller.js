@@ -8,6 +8,7 @@ module.exports.profile = function(request, response){
 
 // Render User SignUp Page
 module.exports.signUp = function(request, response){
+
     return response.render('user_sign_up',{
         title : "Sign in | Codeial",
     });
