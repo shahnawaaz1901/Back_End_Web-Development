@@ -7,7 +7,7 @@ module.exports.home = function(request, response){
     // WhenEver Page is refreshed this Console Statement fire Because conroller is called
 
 
-    response.cookies('')
+    response.cookie('name','ashu ansari');          // Send Cookie to the Browser
     return response.render('home',{
         title : "CodeIal | Home"
     });
