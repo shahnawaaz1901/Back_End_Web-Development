@@ -24,7 +24,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join("src", "views"));
 
 // Server Request URL
-app.use("/contacts", contactRouter);
+app.use("/", contactRouter);
 // app.get("/", function (request, response) {
 //   // Function Callback is Only Support Till Previous Version of MongoDB
 //   Contact.find({}, function (error, contact) {
@@ -74,6 +74,10 @@ app.use("/contacts", contactRouter);
 //     return response.redirect("back");
 //   });
 // });
+
+app.use((req, res)=>{
+  res.send("Please Go to Right ");
+})
 
 // Server Status
 app.listen(port, function (error) {
